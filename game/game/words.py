@@ -8,7 +8,7 @@ file_folder = os.path.dirname(os.path.abspath(__file__))
 words_path = os.path.join(file_folder, "words.txt")
 
 def get_words():
-    f = open(words_path, "r")
+    f = open(words_path, "r", encoding="utf-8")
     words = []
     for l in f:
         if l[:4] == "Noms":
