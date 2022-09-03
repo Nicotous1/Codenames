@@ -158,7 +158,7 @@ export default {
   },
   methods: {
     getCards(card = 0) {
-      const path = 'http://192.168.1.29:5000/cards';
+      const path = `http://${window.location.hostname}:5000/cards`;
       axios.get(path)
         .then((res) => {
           this.cards = res.data.cards;
@@ -185,7 +185,7 @@ export default {
       if (this.is_spy) {
         return;
       }
-      const path = 'http://192.168.1.29:5000/picked';
+      const path = `http://${window.location.hostname}:5000/picked`;
       axios.post(path, card)
         .then(() => {
           this.getCards(card);
@@ -197,7 +197,7 @@ export default {
         });
     },
     reset() {
-      const path = 'http://192.168.1.29:5000/start';
+      const path = `http://${window.location.hostname}:5000/start`;
       axios.get(path)
         .then(() => {
           this.blue_win = false;

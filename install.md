@@ -23,6 +23,3 @@ npm run serve
 # If change from windows or linux
 RUn fix
 npm run lint -- --fix
-
-# Replace IP by current run in server vue
-Search for "192.168.1" and replace by current ip last number in Home.vue
