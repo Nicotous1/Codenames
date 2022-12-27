@@ -1,21 +1,26 @@
 import random
 
 import numpy as np
+from typing import List, Set
 
 import os
 
 file_folder = os.path.dirname(os.path.abspath(__file__))
 words_path = os.path.join(file_folder, "words.txt")
 
-def get_words():
+def get_words()->List[str]:
     f = open(words_path, "r", encoding="utf-8")
     words = []
     for l in f:
         if l[:4] == "Noms":
             line_words = l[7:].strip()#.replace(" ", "")
             words += line_words.split(",")
+    words = extract_unique_values_of_list(words)
     f.close()
     return words
+
+def extract_unique_values_of_list(words:List[str])->List[str]:
+    return list(set(words))
 
 
 def generate_colors():
